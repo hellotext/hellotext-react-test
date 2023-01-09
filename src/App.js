@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import Hellotext from "@hellotext/hellotext";
 
 function App() {
+  window.Hellotext = Hellotext
   return (
     <div className="App">
       <header className="App-header">
