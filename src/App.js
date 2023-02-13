@@ -2,6 +2,20 @@ import logo from './logo.svg';
 import './App.css';
 import Hellotext from "@hellotext/hellotext";
 
+Hellotext.on("session-set", async (session) => {
+  console.log("session is set")
+  const response = await Hellotext.track("app.installed", {
+    app_attributes: {
+      name: `Hellotext ${new Date().toString()}`
+    }
+  })
+
+  console.log(response)
+  console.log(response.data)
+})
+
+Hellotext.initialize("XRlYbGzx")
+
 function App() {
   window.Hellotext = Hellotext
   return (
