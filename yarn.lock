@@ -1206,9 +1206,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@hellotext/hellotext@hellotext/hellotext.js#bundling":
-  version "1.2.0"
-  resolved "https://codeload.github.com/hellotext/hellotext.js/tar.gz/8eeed6da2f869767144f857a1b76779d8934bf6c"
+"@hellotext/hellotext@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@hellotext/hellotext/-/hellotext-1.3.2.tgz#5c540fc28f412abbaa9995a63bf0c9a6544199fa"
+  integrity sha512-1U+JYbLBEsUx16sLC8DCqkR4NNzDfhHpgrpD//5AYIF9JBEoFcDNBP1qth/g39XktPy1ZRQagtLpUehy3VDToQ==
   dependencies:
     core-js "3.27.2"
     whatwg-fetch "^3.6.2"

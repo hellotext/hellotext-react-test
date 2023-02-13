@@ -14,7 +14,7 @@ Hellotext.on("session-set", async (session) => {
   console.log(response.data)
 })
 
-Hellotext.initialize("XRlYbGzx")
+// Hellotext.initialize("BUSINESS_ID")
 
 function App() {
   window.Hellotext = Hellotext
