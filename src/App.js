@@ -5,7 +5,7 @@ import Hellotext from "@hellotext/hellotext";
 Hellotext.on("session-set", async (session) => {
   console.log("session is set")
   const response = await Hellotext.track("app.installed", {
-    app_attributes: {
+    app_parameters: {
       name: `Hellotext ${new Date().toString()}`
     }
   })
