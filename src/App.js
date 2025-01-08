@@ -21,38 +21,30 @@ Hellotext.on('form:completed', (form) => {
   console.log(form)
 })
 
+Hellotext.on('webchat:message:sent', (message) => {
+  console.log("message sent")
+  console.log(message)
+})
+
+Hellotext.on('webchat:message:received', (message) => {
+  console.log("message recevied")
+  console.log(message)
+})
+
 Hellotext.initialize("zGrDJ1Lb", {
-  autogenerateSession: false,
-  apiRoot: 'http://api.lvh.me:3000/v1'
+  apiRoot: 'http://api.lvh.me:3000/v1',
+  webChat: {
+    id: 'zGrDJ1Lb',
+    container: '#app',
+    behaviour: 'modal',
+  }
 })
 
 function App() {
-  window.Hellotext = Hellotext
-  const [forms, setForms] = useState([])
 
-  Hellotext.on("forms:collected", (forms) => {
-    setForms(Hellotext.forms.forms)
-  })
-
-  useEffect(() => {
-    Hellotext.forms.collect()
-  }, [])
-
-  console.log(forms)
   return (
-    <div className="App">
-
-      <form data-hello-form="zGrDJ1Lb">
-      </form>
-
+    <div className="App" id="app">
       <header className="App-header">
-        {
-          forms.map(form => (
-           <button onClick={() => Hellotext.forms.forms[0].mount()}>
-            Load Form
-          </button>
-        ))
-        }
       </header>
     </div>
   );

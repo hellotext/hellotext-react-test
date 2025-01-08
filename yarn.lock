@@ -1880,14 +1880,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hellotext/hellotext@npm:1.5.3":
-  version: 1.5.3
-  resolution: "@hellotext/hellotext@npm:1.5.3"
+"@floating-ui/core@npm:^1.6.0":
+  version: 1.6.8
+  resolution: "@floating-ui/core@npm:1.6.8"
   dependencies:
+    "@floating-ui/utils": "npm:^0.2.8"
+  checksum: 10c0/d6985462aeccae7b55a2d3f40571551c8c42bf820ae0a477fc40ef462e33edc4f3f5b7f11b100de77c9b58ecb581670c5c3f46d0af82b5e30aa185c735257eb9
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.6.12":
+  version: 1.6.12
+  resolution: "@floating-ui/dom@npm:1.6.12"
+  dependencies:
+    "@floating-ui/core": "npm:^1.6.0"
+    "@floating-ui/utils": "npm:^0.2.8"
+  checksum: 10c0/c67b39862175b175c6ac299ea970f17a22c7482cfdf3b1bc79313407bf0880188b022b878953fa69d3ce166ff2bd9ae57c86043e5dd800c262b470d877591b7d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.8":
+  version: 0.2.8
+  resolution: "@floating-ui/utils@npm:0.2.8"
+  checksum: 10c0/a8cee5f17406c900e1c3ef63e3ca89b35e7a2ed645418459a73627b93b7377477fc888081011c6cd177cac45ec2b92a6cab018c14ea140519465498dddd2d3f9
+  languageName: node
+  linkType: hard
+
+"@hellotext/hellotext@git://github.com/hellotext/hellotext.js#df83b9147e0059435d30cdf3a76478df62b56744":
+  version: 1.8.2
+  resolution: "@hellotext/hellotext@https://github.com/hellotext/hellotext.js.git#commit=df83b9147e0059435d30cdf3a76478df62b56744"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.6.12"
     "@hotwired/stimulus": "npm:^3.0.0"
     core-js: "npm:3.27.2"
+    emoji-mart: "npm:^5.6.0"
     whatwg-fetch: "npm:^3.6.2"
-  checksum: 10c0/a462fa9f04b7951ecac3cb34771a10023272e64e75f1e2f72ce7bdb26f2b1ff75e8593a201cc63fbb8ae583c2bc431f6329eb8bf2ce7ce24b17682a10a311d3a
+  checksum: 10c0/8397fe8aead406e6a7982eb3d81e611510599ecb554d9f353c1e3953b5cf2a80f0077e85ea8f057f42b92c80383fe6270e88175ed358d5219dc8be06c0d62425
   languageName: node
   linkType: hard
 
@@ -5460,6 +5488,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"emoji-mart@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "emoji-mart@npm:5.6.0"
+  checksum: 10c0/23e68ab10984f101b696d8f8e103e553ffa8e4d644e9a315190a9657903f71b833db09aac51b05de20f33bb9eef5bc1425eecdb2437042b25aff2dad0231f029
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -9019,7 +9054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-app@workspace:."
   dependencies:
-    "@hellotext/hellotext": "npm:1.5.3"
+    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#df83b9147e0059435d30cdf3a76478df62b56744"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.4.0"
     "@testing-library/user-event": "npm:^13.5.0"
