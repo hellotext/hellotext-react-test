@@ -34,7 +34,7 @@ Hellotext.on('webchat:message:received', (message) => {
 Hellotext.initialize("zGrDJ1Lb", {
   apiRoot: 'http://api.lvh.me:3000/v1',
   webChat: {
-    id: 'zGrDJ1Lb',
+    id: 'APwbP54L',
     container: '#app',
     behaviour: 'modal',
   }

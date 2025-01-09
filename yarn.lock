@@ -1906,16 +1906,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hellotext/hellotext@git://github.com/hellotext/hellotext.js#df83b9147e0059435d30cdf3a76478df62b56744":
+"@hellotext/hellotext@git://github.com/hellotext/hellotext.js#4ebf9bf6d87d5938466cbc1c6431a9ecf2c67a39":
   version: 1.8.2
-  resolution: "@hellotext/hellotext@https://github.com/hellotext/hellotext.js.git#commit=df83b9147e0059435d30cdf3a76478df62b56744"
+  resolution: "@hellotext/hellotext@https://github.com/hellotext/hellotext.js.git#commit=4ebf9bf6d87d5938466cbc1c6431a9ecf2c67a39"
   dependencies:
     "@floating-ui/dom": "npm:^1.6.12"
     "@hotwired/stimulus": "npm:^3.0.0"
     core-js: "npm:3.27.2"
     emoji-mart: "npm:^5.6.0"
     whatwg-fetch: "npm:^3.6.2"
-  checksum: 10c0/8397fe8aead406e6a7982eb3d81e611510599ecb554d9f353c1e3953b5cf2a80f0077e85ea8f057f42b92c80383fe6270e88175ed358d5219dc8be06c0d62425
+  checksum: 10c0/00779bf9b42fdfb95283c54774b9c83f0c389f74f13463d04852a3afed1b27934bb30c919c323ca5d16f93706dcd84437a9185b040261b6db86a24dffb892f2d
   languageName: node
   linkType: hard
 
@@ -9054,7 +9054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-app@workspace:."
   dependencies:
-    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#df83b9147e0059435d30cdf3a76478df62b56744"
+    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#4ebf9bf6d87d5938466cbc1c6431a9ecf2c67a39"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.4.0"
     "@testing-library/user-event": "npm:^13.5.0"
