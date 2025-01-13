@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#8c143c412fbb8ba5004a6d33e2520f18201d5e3b",
+    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#095afd75ebba23dd2c5cbbc3debbf1aea2c969d9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -36,5 +36,8 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.2.2",
+  "devDependencies": {
+    "whatwg-fetch": "^3.6.20"
+  }
 }

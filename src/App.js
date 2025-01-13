@@ -5,38 +5,45 @@ import './App.css';
 import Hellotext from "@hellotext/hellotext";
 
 // Hellotext.on("session-set", async (session) => {
-//   console.log("session is set")
-//   const response = await Hellotext.track("app.installed", {
-//     app_parameters: {
-//       name: `Hellotext ${new Date().toString()}`
-//     }
+//   console.log(Hellotext.session)
+//   setTimeout(async () => {
+//     console.log(Hellotext.session)
+//
+//     const response = await Hellotext.track("app.installed", {
+//       app_parameters: {
+//         name: `Hellotext ${new Date().toString()}`
+//       }
+//     })
+//
+//     console.log(response)
+//     console.log(response.data)
 //   })
 //
-//   console.log(response)
-//   console.log(response.data)
+//
 // })
 
 Hellotext.on('form:completed', (form) => {
   console.log("form completed")
   console.log(form)
 })
-
-Hellotext.on('webchat:message:sent', (message) => {
-  console.log("message sent")
-  console.log(message)
-})
-
-Hellotext.on('webchat:message:received', (message) => {
-  console.log("message recevied")
-  console.log(message)
-})
+//
+// Hellotext.on('webchat:message:sent', (message) => {
+//   console.log("message sent")
+//   console.log(message)
+// })
+//
+// Hellotext.on('webchat:message:received', (message) => {
+//   console.log("message recevied")
+//   console.log(message)
+// })
 
 Hellotext.initialize("zGrDJ1Lb", {
   apiRoot: 'http://api.lvh.me:3000/v1',
   webChat: {
-    id: 'APwbP54L',
+    id: 'qEr2a5pv',
     container: '#app',
     behaviour: 'modal',
+    placement: 'top-right',
   }
 })
 
