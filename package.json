@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#11eb877c22d39719ce5552b0077107c2dc6c54c2",
+    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#8c64d19794bf9ccd6406610de5ad60f0436e0439",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

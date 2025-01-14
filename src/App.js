@@ -40,7 +40,7 @@ Hellotext.on('form:completed', (form) => {
 Hellotext.initialize("zGrDJ1Lb", {
   apiRoot: 'http://api.lvh.me:3000/v1',
   webChat: {
-    id: 'qEr2a5pv',
+    id: 'M01az53K',
     container: '#app',
     behaviour: 'modal',
     placement: 'top-right',
