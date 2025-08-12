@@ -1,8 +1,5 @@
-import { useEffect, useState } from 'react';
-
-import logo from './logo.svg';
-import './App.css';
 import Hellotext from "@hellotext/hellotext";
+import "./App.css";
 
 // Hellotext.on("session-set", async (session) => {
 //   console.log(Hellotext.session)
@@ -22,10 +19,10 @@ import Hellotext from "@hellotext/hellotext";
 //
 // })
 
-Hellotext.on('form:completed', (form) => {
-  console.log("form completed")
-  console.log(form)
-})
+Hellotext.on("form:completed", (form) => {
+  console.log("form completed");
+  console.log(form);
+});
 //
 // Hellotext.on('webchat:message:sent', (message) => {
 //   console.log("message sent")
@@ -37,24 +34,15 @@ Hellotext.on('form:completed', (form) => {
 //   console.log(message)
 // })
 
-Hellotext.initialize("zGrDJ1Lb", {
-  apiRoot: 'http://api.lvh.me:3000/v1',
-  webChat: {
-    id: 'M01az53K',
-    container: '#app',
-    behaviour: 'modal',
-    placement: 'top-right',
-  }
-})
+Hellotext.initialize("M01az53K", {
+  apiRoot: "http://api.lvh.me:3000/v1",
+  webchat: {
+    id: "zGrDJ1Lb",
+  },
+});
 
 function App() {
-
-  return (
-    <div className="App" id="app">
-      <header className="App-header">
-      </header>
-    </div>
-  );
+  return <div className="App" id="app"></div>;
 }
 
 export default App;
