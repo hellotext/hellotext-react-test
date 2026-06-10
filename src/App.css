@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 50%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #fff7f4 0%, #f9fafb 40%, #f3e8ff 100%);
   padding: var(--space-lg);
 }
 
@@ -28,10 +28,9 @@
 }
 
 .setup-card__logo {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
 }
 
 .setup-card__subtitle {
@@ -177,15 +176,14 @@
   gap: var(--space-md);
 }
 
-.dashboard__title {
-  font-size: 16px;
-  font-weight: 700;
+.dashboard__logo {
   color: #fff;
+  display: block;
 }
 
 .dashboard__badge {
-  background: rgba(99, 102, 241, 0.2);
-  color: #a5b4fc;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 12px;
@@ -255,8 +253,8 @@
 }
 
 .tab--active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
 /* --- Panel --- */

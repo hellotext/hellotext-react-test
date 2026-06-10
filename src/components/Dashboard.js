@@ -1,4 +1,5 @@
 import React from 'react';
+import HellotextLogo from './HellotextLogo';
 import SessionPanel from './SessionPanel';
 import UtmPanel from './UtmPanel';
 import TrackingPanel from './TrackingPanel';
@@ -45,7 +46,7 @@ export default function Dashboard({
     <div className="dashboard" data-testid="dashboard">
       <header className="dashboard__header">
         <div className="dashboard__header-left">
-          <span className="dashboard__title">Hellotext Playground</span>
+          <HellotextLogo width={120} height={34} className="dashboard__logo" />
           <span className="dashboard__badge">{businessId}</span>
         </div>
         <button

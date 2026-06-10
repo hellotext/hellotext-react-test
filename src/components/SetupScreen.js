@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import HellotextLogo from './HellotextLogo';
 
 const STORAGE_KEY_BIZ = 'ht_business_id';
 const STORAGE_KEY_WEBCHAT = 'ht_webchat_id';
@@ -29,7 +30,9 @@ export default function SetupScreen({ onInitialize }) {
   return (
     <div className="setup-screen">
       <form className="setup-card" onSubmit={handleSubmit} data-testid="setup-form">
-        <div className="setup-card__logo">Hellotext</div>
+        <div className="setup-card__logo">
+          <HellotextLogo width={180} height={52} />
+        </div>
         <p className="setup-card__subtitle">
           SDK Integration Playground — enter your Business ID to get started.
         </p>
