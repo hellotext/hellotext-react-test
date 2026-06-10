@@ -1,48 +1,76 @@
-import Hellotext from "@hellotext/hellotext";
-import "./App.css";
-
-// Hellotext.on("session-set", async (session) => {
-//   console.log(Hellotext.session)
-//   setTimeout(async () => {
-//     console.log(Hellotext.session)
-//
-//     const response = await Hellotext.track("app.installed", {
-//       app_parameters: {
-//         name: `Hellotext ${new Date().toString()}`
-//       }
-//     })
-//
-//     console.log(response)
-//     console.log(response.data)
-//   })
-//
-//
-// })
-
-Hellotext.on("form:completed", (form) => {
-  console.log("form completed");
-  console.log(form);
-});
-//
-// Hellotext.on('webchat:message:sent', (message) => {
-//   console.log("message sent")
-//   console.log(message)
-// })
-//
-// Hellotext.on('webchat:message:received', (message) => {
-//   console.log("message recevied")
-//   console.log(message)
-// })
-
-Hellotext.initialize("M01az53K", {
-  apiRoot: "http://api.lvh.me:3000/v1",
-  webchat: {
-    id: "zGrDJ1Lb",
-  },
-});
+import React, { useState, useCallback } from 'react';
+import Hellotext from '@hellotext/hellotext';
+import SetupScreen from './components/SetupScreen';
+import Dashboard from './components/Dashboard';
+import './App.css';
 
 function App() {
-  return <div className="App" id="app"></div>;
+  const [initialized, setInitialized] = useState(false);
+  const [businessId, setBusinessId] = useState('');
+  const [webchatId, setWebchatId] = useState(null);
+  const [activeTab, setActiveTab] = useState('session');
+  const [logs, setLogs] = useState([]);
+
+  const addLog = useCallback((entry) => {
+    setLogs((prev) => [
+      ...prev,
+      { ...entry, timestamp: Date.now() },
+    ]);
+  }, []);
+
+  const clearLogs = useCallback(() => {
+    setLogs([]);
+  }, []);
+
+  const handleInitialize = useCallback((bizId, chatId) => {
+    const config = {};
+    if (chatId) {
+      config.webchat = { id: chatId };
+    }
+
+    try {
+      Hellotext.initialize(bizId, config);
+      setBusinessId(bizId);
+      setWebchatId(chatId);
+      setInitialized(true);
+      setLogs([{
+        name: 'Hellotext.initialize',
+        status: 'success',
+        payload: { businessId: bizId, webchatId: chatId },
+        timestamp: Date.now(),
+      }]);
+    } catch (error) {
+      setLogs([{
+        name: 'Hellotext.initialize',
+        status: 'error',
+        payload: error?.message || String(error),
+        timestamp: Date.now(),
+      }]);
+    }
+  }, []);
+
+  const handleReset = useCallback(() => {
+    localStorage.removeItem('ht_business_id');
+    localStorage.removeItem('ht_webchat_id');
+    window.location.reload();
+  }, []);
+
+  if (!initialized) {
+    return <SetupScreen onInitialize={handleInitialize} />;
+  }
+
+  return (
+    <Dashboard
+      businessId={businessId}
+      webchatId={webchatId}
+      activeTab={activeTab}
+      onTabChange={setActiveTab}
+      logs={logs}
+      addLog={addLog}
+      onClearLogs={clearLogs}
+      onReset={handleReset}
+    />
+  );
 }
 
 export default App;

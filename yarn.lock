@@ -1863,6 +1863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emoji-mart/data@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@emoji-mart/data@npm:1.2.1"
+  checksum: 10c0/6784b97bf49a0d3ff110d8447bbd3b0449fcbc497294be3d1c3a6cb1609308776895c7520200be604cbecaa5e172c76927e47f34419c72ba8a76fd4e5a53674b
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.4.1":
   version: 1.4.1
   resolution: "@eslint/eslintrc@npm:1.4.1"
@@ -1906,14 +1913,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hellotext/hellotext@git://github.com/hellotext/hellotext.js#b8e3f92d8ab6f3ac3fef194db0d35cf1389e4576":
-  version: 2.1.2
-  resolution: "@hellotext/hellotext@https://github.com/hellotext/hellotext.js.git#commit=b8e3f92d8ab6f3ac3fef194db0d35cf1389e4576"
+"@hellotext/hellotext@npm:^2.4.0":
+  version: 2.4.5
+  resolution: "@hellotext/hellotext@npm:2.4.5"
   dependencies:
+    "@emoji-mart/data": "npm:^1.2.1"
     "@floating-ui/dom": "npm:^1.7.3"
     "@hotwired/stimulus": "npm:^3.0.0"
     emoji-mart: "npm:^5.6.0"
-  checksum: 10c0/2782431a7effe76529261c00e22ebafc924b36e342ba181183c068b3f421c176a5898eeb555cd11c839065736c4ff8acc8036a105ee9b68ef2cd13a256df5e95
+  checksum: 10c0/812aa2cd7c11294f807f27236ef3e3a3f1b16a6a15eb077d999330cd7babc7f9730496fc177bb098309765ccdd97e93ba6aa9051a057e98815658c5a17eb4495
   languageName: node
   linkType: hard
 
@@ -6860,6 +6868,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hellotext-playground@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "hellotext-playground@workspace:."
+  dependencies:
+    "@hellotext/hellotext": "npm:^2.4.0"
+    "@testing-library/jest-dom": "npm:^5.16.5"
+    "@testing-library/react": "npm:^13.4.0"
+    "@testing-library/user-event": "npm:^13.5.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    react-scripts: "npm:5.0.1"
+    web-vitals: "npm:^2.1.4"
+  languageName: unknown
+  linkType: soft
+
 "hoopy@npm:^0.1.4":
   version: 0.1.4
   resolution: "hoopy@npm:0.1.4"
@@ -9047,22 +9070,6 @@ __metadata:
   checksum: 10c0/5120171d4bdb1577764c5afa96e413353bff530d1b37081cb29cccc747f989eb1baf40574fe8e27060fc1aef72b59c042f72b9b208413de33bcf411343c69057
   languageName: node
   linkType: hard
-
-"my-app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "my-app@workspace:."
-  dependencies:
-    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#b8e3f92d8ab6f3ac3fef194db0d35cf1389e4576"
-    "@testing-library/jest-dom": "npm:^5.16.5"
-    "@testing-library/react": "npm:^13.4.0"
-    "@testing-library/user-event": "npm:^13.5.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-scripts: "npm:5.0.1"
-    web-vitals: "npm:^2.1.4"
-    whatwg-fetch: "npm:^3.6.20"
-  languageName: unknown
-  linkType: soft
 
 "nanoid@npm:^3.3.4":
   version: 3.3.4
@@ -12846,13 +12853,6 @@ __metadata:
   version: 3.6.2
   resolution: "whatwg-fetch@npm:3.6.2"
   checksum: 10c0/cc10f6893fe71839250b6e2fa9bc293bcf0ca5b93129712a7d1097fb7528b3ff617eb065098dc972e74d1455378e514aa34c0901ded41584be16508db63477c8
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:^3.6.20":
-  version: 3.6.20
-  resolution: "whatwg-fetch@npm:3.6.20"
-  checksum: 10c0/fa972dd14091321d38f36a4d062298df58c2248393ef9e8b154493c347c62e2756e25be29c16277396046d6eaa4b11bd174f34e6403fff6aaca9fb30fa1ff46d
   languageName: node
   linkType: hard
 

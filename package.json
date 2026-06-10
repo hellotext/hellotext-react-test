@@ -1,9 +1,9 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "hellotext-playground",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@hellotext/hellotext": "git://github.com/hellotext/hellotext.js#b8e3f92d8ab6f3ac3fef194db0d35cf1389e4576",
+    "@hellotext/hellotext": "^2.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -36,8 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.2.2",
-  "devDependencies": {
-    "whatwg-fetch": "^3.6.20"
-  }
+  "packageManager": "yarn@4.2.2"
 }
