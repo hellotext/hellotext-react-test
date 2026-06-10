@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
+import { useI18n } from '../i18n';
 
 export default function EventLog({ logs, onClear }) {
+  const { t } = useI18n();
   const bodyRef = useRef(null);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export default function EventLog({ logs, onClear }) {
     <div className="event-log" data-testid="event-log">
       <div className="event-log__header">
         <div>
-          <span className="event-log__title">Event Log</span>{' '}
+          <span className="event-log__title">{t.eventLog.title}</span>{' '}
           <span className="event-log__count">({logs.length})</span>
         </div>
         <button
@@ -42,14 +44,14 @@ export default function EventLog({ logs, onClear }) {
           onClick={onClear}
           data-testid="clear-log-btn"
         >
-          Clear
+          {t.eventLog.clear}
         </button>
       </div>
 
       <div className="event-log__body" ref={bodyRef}>
         {logs.length === 0 ? (
           <div className="event-log__empty">
-            Events will appear here…
+            {t.eventLog.empty}
           </div>
         ) : (
           logs.map((entry, i) => (

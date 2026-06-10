@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Hellotext from '@hellotext/hellotext';
+import { useI18n } from '../i18n';
 
 export default function SessionPanel({ addLog }) {
+  const { t } = useI18n();
   const [session, setSession] = useState(Hellotext.session || null);
 
   useEffect(() => {
@@ -22,24 +24,25 @@ export default function SessionPanel({ addLog }) {
 
   return (
     <div className="panel">
-      <h2 className="panel__title">Session</h2>
+      <h2 className="panel__title">{t.session.title}</h2>
       <p className="panel__description">
-        The SDK assigns a session token when initialized. It is stored in cookies and reused across page loads.
-        The <code>session-set</code> event fires when the session is set or loaded.
+        {t.session.description.split('{code}')[0]}
+        <code>{t.session.sessionSetCode}</code>
+        {t.session.description.split('{code}')[1]}
       </p>
 
       <div className="panel__section">
-        <div className="panel__section-title">Current Session</div>
+        <div className="panel__section-title">{t.session.currentSession}</div>
         <div className={`session-value ${!session ? 'session-value--empty' : ''}`}>
-          {session || 'No session yet — waiting for session-set event…'}
+          {session || t.session.noSession}
         </div>
       </div>
 
       <div className="panel__section">
-        <div className="panel__section-title">How it works</div>
+        <div className="panel__section-title">{t.session.howItWorks}</div>
         <div className="code-hint">
-          <code>Hellotext.session</code> → returns the current session token<br />
-          <code>Hellotext.on('session-set', callback)</code> → fires when session is assigned
+          <code>Hellotext.session</code> {t.session.apiSession}<br />
+          <code>Hellotext.on('session-set', callback)</code> {t.session.apiOn}
         </div>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Hellotext from '@hellotext/hellotext';
+import { useI18n } from '../i18n';
 
 export default function FormsPanel({ addLog }) {
+  const { t } = useI18n();
   const [formId, setFormId] = useState('');
   const [mountedFormId, setMountedFormId] = useState(null);
 
@@ -53,23 +55,24 @@ export default function FormsPanel({ addLog }) {
 
   return (
     <div className="panel">
-      <h2 className="panel__title">Forms</h2>
+      <h2 className="panel__title">{t.forms.title}</h2>
       <p className="panel__description">
-        The SDK discovers elements with <code>data-hello-form</code> attributes and mounts
-        Hellotext forms into them. Enter a Form ID to test.
+        {t.forms.description.split('{code}')[0]}
+        <code>{t.forms.dataHelloForm}</code>
+        {t.forms.description.split('{code}')[1]}
       </p>
 
       <div className="panel__section">
-        <div className="panel__section-title">Mount a Form</div>
+        <div className="panel__section-title">{t.forms.mountForm}</div>
         <div className="inline-row">
           <div className="field">
-            <label htmlFor="form-id">Form ID</label>
+            <label htmlFor="form-id">{t.forms.formId}</label>
             <input
               id="form-id"
               type="text"
               value={formId}
               onChange={(e) => setFormId(e.target.value)}
-              placeholder="e.g. aBcDeFgH"
+              placeholder={t.forms.formIdPlaceholder}
             />
           </div>
           {!mountedFormId ? (
@@ -79,7 +82,7 @@ export default function FormsPanel({ addLog }) {
               disabled={!formId.trim()}
               data-testid="mount-form-btn"
             >
-              Mount Form
+              {t.forms.mountBtn}
             </button>
           ) : (
             <button
@@ -87,7 +90,7 @@ export default function FormsPanel({ addLog }) {
               onClick={handleUnmount}
               data-testid="unmount-form-btn"
             >
-              Unmount
+              {t.forms.unmountBtn}
             </button>
           )}
         </div>
@@ -99,15 +102,15 @@ export default function FormsPanel({ addLog }) {
             {/* The SDK will discover and mount the form here */}
           </div>
         ) : (
-          <span>Form will render here after mounting</span>
+          <span>{t.forms.placeholder}</span>
         )}
       </div>
 
       <div className="panel__section" style={{ marginTop: 'var(--space-md)' }}>
-        <div className="panel__section-title">Events</div>
+        <div className="panel__section-title">{t.forms.events}</div>
         <div className="code-hint">
-          <code>forms:collected</code> → fires when forms are discovered on the page<br />
-          <code>form:completed</code> → fires when a user completes a form and verifies OTP
+          <code>forms:collected</code> {t.forms.formsCollectedHint}<br />
+          <code>form:completed</code> {t.forms.formCompletedHint}
         </div>
       </div>
     </div>

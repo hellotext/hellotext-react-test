@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Hellotext from '@hellotext/hellotext';
+import { useI18n } from '../i18n';
 
 const PRESET_EVENTS = [
   {
@@ -17,6 +18,7 @@ const PRESET_EVENTS = [
 ];
 
 export default function TrackingPanel({ addLog }) {
+  const { t } = useI18n();
   const [customEvent, setCustomEvent] = useState('');
   const [customParams, setCustomParams] = useState('{}');
   const [sending, setSending] = useState(null);
@@ -58,7 +60,7 @@ export default function TrackingPanel({ addLog }) {
       addLog({
         name: 'custom track',
         status: 'error',
-        payload: 'Invalid JSON in params field',
+        payload: t.tracking.invalidJson,
       });
       return;
     }
@@ -68,14 +70,15 @@ export default function TrackingPanel({ addLog }) {
 
   return (
     <div className="panel">
-      <h2 className="panel__title">Tracking Events</h2>
+      <h2 className="panel__title">{t.tracking.title}</h2>
       <p className="panel__description">
-        Fire tracking events using <code>Hellotext.track(eventName, params)</code>.
-        Click a preset button or enter a custom event below.
+        {t.tracking.description.split('{code}')[0]}
+        <code>{t.tracking.trackCode}</code>
+        {t.tracking.description.split('{code}')[1]}
       </p>
 
       <div className="panel__section">
-        <div className="panel__section-title">Preset Events</div>
+        <div className="panel__section-title">{t.tracking.presetEvents}</div>
         <div className="tracking-buttons">
           {PRESET_EVENTS.map((evt) => (
             <button
@@ -85,27 +88,27 @@ export default function TrackingPanel({ addLog }) {
               disabled={sending === evt.name}
               data-testid={`track-${evt.name}`}
             >
-              {sending === evt.name ? 'Sending…' : evt.name}
+              {sending === evt.name ? t.tracking.sending : evt.name}
             </button>
           ))}
         </div>
       </div>
 
       <div className="panel__section">
-        <div className="panel__section-title">Custom Event</div>
+        <div className="panel__section-title">{t.tracking.customEvent}</div>
         <div className="field">
-          <label htmlFor="custom-event-name">Event Name</label>
+          <label htmlFor="custom-event-name">{t.tracking.eventName}</label>
           <input
             id="custom-event-name"
             type="text"
             value={customEvent}
             onChange={(e) => setCustomEvent(e.target.value)}
-            placeholder="e.g. page.viewed"
+            placeholder={t.tracking.eventNamePlaceholder}
           />
         </div>
         <div className="field">
           <label htmlFor="custom-event-params">
-            Parameters <span className="optional">(JSON)</span>
+            {t.tracking.parameters} <span className="optional">{t.tracking.json}</span>
           </label>
           <textarea
             id="custom-event-params"
@@ -120,7 +123,7 @@ export default function TrackingPanel({ addLog }) {
           disabled={!customEvent.trim() || sending}
           data-testid="track-custom"
         >
-          Fire Custom Event
+          {t.tracking.fireCustom}
         </button>
       </div>
     </div>

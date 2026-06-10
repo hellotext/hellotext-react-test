@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
+import { I18nProvider } from './i18n';
 
 // Mock the Hellotext SDK
 jest.mock('@hellotext/hellotext', () => ({
@@ -23,21 +24,33 @@ beforeEach(() => {
 
 describe('Setup Screen', () => {
   test('renders setup screen with Business ID input and Initialize button', () => {
-    render(<App />);
+    render(
+      <I18nProvider>
+        <App />
+      </I18nProvider>
+    );
     expect(screen.getByLabelText(/business id/i)).toBeInTheDocument();
     expect(screen.getByTestId('initialize-btn')).toBeInTheDocument();
     expect(screen.getByTestId('initialize-btn')).toHaveTextContent(/initialize sdk/i);
   });
 
   test('Initialize button is disabled when Business ID is empty', () => {
-    render(<App />);
+    render(
+      <I18nProvider>
+        <App />
+      </I18nProvider>
+    );
     const btn = screen.getByTestId('initialize-btn');
     expect(btn).toBeDisabled();
   });
 
   test('persists Business ID in localStorage after initialization', () => {
     const Hellotext = require('@hellotext/hellotext').default;
-    render(<App />);
+    render(
+      <I18nProvider>
+        <App />
+      </I18nProvider>
+    );
 
     const input = screen.getByLabelText(/business id/i);
     fireEvent.change(input, { target: { value: 'TestBiz123' } });
@@ -50,7 +63,11 @@ describe('Setup Screen', () => {
 
 describe('Dashboard', () => {
   const initializeApp = () => {
-    render(<App />);
+    render(
+    <I18nProvider>
+      <App />
+    </I18nProvider>
+  );
     const input = screen.getByLabelText(/business id/i);
     fireEvent.change(input, { target: { value: 'MyBiz' } });
     fireEvent.click(screen.getByTestId('initialize-btn'));

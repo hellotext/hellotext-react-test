@@ -6,14 +6,8 @@ import TrackingPanel from './TrackingPanel';
 import FormsPanel from './FormsPanel';
 import WebchatPanel from './WebchatPanel';
 import EventLog from './EventLog';
+import { useI18n } from '../i18n';
 
-const TABS = [
-  { id: 'session', label: 'Session' },
-  { id: 'utm', label: 'UTM' },
-  { id: 'tracking', label: 'Tracking' },
-  { id: 'forms', label: 'Forms' },
-  { id: 'webchat', label: 'Webchat' },
-];
 
 export default function Dashboard({
   businessId,
@@ -25,6 +19,15 @@ export default function Dashboard({
   onClearLogs,
   onReset,
 }) {
+  const { t } = useI18n();
+  const tabs = [
+    { id: "session", label: t.dashboard.tabs.session },
+    { id: "utm", label: t.dashboard.tabs.utm },
+    { id: "tracking", label: t.dashboard.tabs.tracking },
+    { id: "forms", label: t.dashboard.tabs.forms },
+    { id: "webchat", label: t.dashboard.tabs.webchat },
+  ];
+
   const renderPanel = () => {
     switch (activeTab) {
       case 'session':
@@ -50,18 +53,19 @@ export default function Dashboard({
           <span className="dashboard__badge">{businessId}</span>
         </div>
         <button
-          className="btn btn--secondary btn--small"
+          className="dashboard__reset btn btn--small btn--ghost"
           onClick={onReset}
+          title={t.dashboard.reset}
           data-testid="reset-btn"
         >
-          Reset
+          {t.dashboard.reset}
         </button>
       </header>
 
       <div className="dashboard__body">
         <div className="dashboard__main">
           <nav className="tabs" data-testid="tab-navigation">
-            {TABS.map((tab) => (
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
                 className={`tab ${activeTab === tab.id ? 'tab--active' : ''}`}

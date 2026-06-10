@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Hellotext from '@hellotext/hellotext';
+import { useI18n } from '../i18n';
 
 export default function UtmPanel({ addLog }) {
+  const { t } = useI18n();
   const [utmData, setUtmData] = useState(null);
 
   useEffect(() => {
@@ -25,14 +27,15 @@ export default function UtmPanel({ addLog }) {
 
   return (
     <div className="panel">
-      <h2 className="panel__title">UTM Capture</h2>
+      <h2 className="panel__title">{t.utm.title}</h2>
       <p className="panel__description">
-        The SDK automatically captures UTM parameters from the URL and fires the <code>utm-set</code> event.
-        Add UTM params to the URL and reload to test.
+        {t.utm.description.split('{code}')[0]}
+        <code>{t.utm.utmSetCode}</code>
+        {t.utm.description.split('{code}')[1]}
       </p>
 
       <div className="panel__section">
-        <div className="panel__section-title">Test URL</div>
+        <div className="panel__section-title">{t.utm.testUrl}</div>
         <div className="code-hint">
           <code>{currentUrl}?{utmParams}</code>
         </div>
@@ -43,18 +46,18 @@ export default function UtmPanel({ addLog }) {
             window.location.href = url;
           }}
         >
-          Open with UTM params
+          {t.utm.openWithUtm}
         </button>
       </div>
 
       <div className="panel__section">
-        <div className="panel__section-title">Captured UTM Data</div>
+        <div className="panel__section-title">{t.utm.capturedData}</div>
         {utmData ? (
           <table className="utm-table">
             <thead>
               <tr>
-                <th>Parameter</th>
-                <th>Value</th>
+                <th>{t.utm.parameterCol}</th>
+                <th>{t.utm.valueCol}</th>
               </tr>
             </thead>
             <tbody>
@@ -68,7 +71,7 @@ export default function UtmPanel({ addLog }) {
           </table>
         ) : (
           <div className="session-value session-value--empty">
-            No UTM data captured yet — add UTM params to the URL and reload.
+            {t.utm.noData}
           </div>
         )}
       </div>

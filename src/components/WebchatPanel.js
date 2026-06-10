@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Hellotext from '@hellotext/hellotext';
+import { useI18n } from '../i18n';
 
 const WEBCHAT_EVENTS = [
   'webchat:mounted',
@@ -10,6 +11,7 @@ const WEBCHAT_EVENTS = [
 ];
 
 export default function WebchatPanel({ addLog, webchatId }) {
+  const { t } = useI18n();
   useEffect(() => {
     const handlers = WEBCHAT_EVENTS.map((eventName) => {
       const handler = (data) => {
@@ -32,25 +34,24 @@ export default function WebchatPanel({ addLog, webchatId }) {
 
   return (
     <div className="panel">
-      <h2 className="panel__title">Webchat</h2>
+      <h2 className="panel__title">{t.webchat.title}</h2>
       <p className="panel__description">
-        The SDK automatically mounts webchat when configured.
+        {t.webchat.descriptionDefault}
         {webchatId
-          ? <> Initialized with Webchat ID: <code>{webchatId}</code>.</>
-          : <> Using dashboard-managed webchat settings (no override ID specified).</>
+          ? <> {t.webchat.withId.replace('{id}', '')}<code>{webchatId}</code>.</>
+          : <> {t.webchat.withoutId}</>
         }
       </p>
 
       <div className="panel__section">
-        <div className="panel__section-title">Status</div>
+        <div className="panel__section-title">{t.webchat.status}</div>
         <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
-          If webchat is configured for your business, the widget should appear in the bottom-right corner of this page.
-          Interact with it and watch events appear in the Event Log.
+          {t.webchat.statusDescription}
         </p>
       </div>
 
       <div className="panel__section">
-        <div className="panel__section-title">Monitored Events</div>
+        <div className="panel__section-title">{t.webchat.monitoredEvents}</div>
         <div className="code-hint">
           {WEBCHAT_EVENTS.map((evt) => (
             <div key={evt}><code>{evt}</code></div>
@@ -59,7 +60,7 @@ export default function WebchatPanel({ addLog, webchatId }) {
       </div>
 
       <div className="panel__section">
-        <div className="panel__section-title">Configuration</div>
+        <div className="panel__section-title">{t.webchat.configuration}</div>
         <div className="code-hint">
           <code>
             {webchatId

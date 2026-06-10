@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import HellotextLogo from './HellotextLogo';
+import { useI18n } from '../i18n';
 
 const STORAGE_KEY_BIZ = 'ht_business_id';
 const STORAGE_KEY_WEBCHAT = 'ht_webchat_id';
 
 export default function SetupScreen({ onInitialize }) {
+  const { t } = useI18n();
+
   const [businessId, setBusinessId] = useState(
     () => localStorage.getItem(STORAGE_KEY_BIZ) || ''
   );
@@ -34,37 +37,37 @@ export default function SetupScreen({ onInitialize }) {
           <HellotextLogo width={180} height={52} />
         </div>
         <p className="setup-card__subtitle">
-          SDK Integration Playground — enter your Business ID to get started.
+          {t.setup.subtitle}
         </p>
 
         <div className="field">
-          <label htmlFor="business-id">Business ID</label>
+          <label htmlFor="business-id">{t.setup.businessId}</label>
           <input
             id="business-id"
             type="text"
             value={businessId}
             onChange={(e) => setBusinessId(e.target.value)}
-            placeholder="e.g. aBcDeFgH"
+            placeholder={t.setup.businessIdPlaceholder}
             autoFocus
           />
           <div className="hint">
-            Find this in your Hellotext dashboard → Settings → Business.
+            {t.setup.businessIdHint}
           </div>
         </div>
 
         <div className="field">
           <label htmlFor="webchat-id">
-            Webchat ID <span className="optional">(optional)</span>
+            {t.setup.webchatId} <span className="optional">{t.setup.optional}</span>
           </label>
           <input
             id="webchat-id"
             type="text"
             value={webchatId}
             onChange={(e) => setWebchatId(e.target.value)}
-            placeholder="Leave empty to use dashboard defaults"
+            placeholder={t.setup.webchatIdPlaceholder}
           />
           <div className="hint">
-            Override the webchat configuration. If empty, the SDK uses your dashboard webchat settings.
+            {t.setup.webchatIdHint}
           </div>
         </div>
 
@@ -74,7 +77,7 @@ export default function SetupScreen({ onInitialize }) {
           disabled={!businessId.trim()}
           data-testid="initialize-btn"
         >
-          Initialize SDK
+          {t.setup.initializeBtn}
         </button>
       </form>
     </div>
