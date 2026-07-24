@@ -4117,30 +4117,18 @@ __metadata:
   linkType: hard
 
 "ajv@npm:^6.10.0, ajv@npm:^6.12.2, ajv@npm:^6.12.4, ajv@npm:^6.12.5":
-  version: 6.12.6
-  resolution: "ajv@npm:6.12.6"
+  version: 6.15.0
+  resolution: "ajv@npm:6.15.0"
   dependencies:
     fast-deep-equal: "npm:^3.1.1"
     fast-json-stable-stringify: "npm:^2.0.0"
     json-schema-traverse: "npm:^0.4.1"
     uri-js: "npm:^4.2.2"
-  checksum: 10c0/41e23642cbe545889245b9d2a45854ebba51cda6c778ebced9649420d9205f2efb39cb43dbc41e358409223b1ea43303ae4839db682c848b891e4811da1a5a71
+  checksum: 10c0/67966499dd272ecde1c2e467084411132891523d057487587879d39ac04207f4351b7b2324c83198013967fbfa632c1612adc960114a30770fbe07a0773b32c2
   languageName: node
   linkType: hard
 
-"ajv@npm:^8.0.0, ajv@npm:^8.6.0, ajv@npm:^8.8.0":
-  version: 8.12.0
-  resolution: "ajv@npm:8.12.0"
-  dependencies:
-    fast-deep-equal: "npm:^3.1.1"
-    json-schema-traverse: "npm:^1.0.0"
-    require-from-string: "npm:^2.0.2"
-    uri-js: "npm:^4.2.2"
-  checksum: 10c0/ac4f72adf727ee425e049bc9d8b31d4a57e1c90da8d28bcd23d60781b12fcd6fc3d68db5df16994c57b78b94eed7988f5a6b482fd376dc5b084125e20a0a622e
-  languageName: node
-  linkType: hard
-
-"ajv@npm:^8.9.0":
+"ajv@npm:^8.0.0, ajv@npm:^8.6.0, ajv@npm:^8.8.0, ajv@npm:^8.9.0":
   version: 8.20.0
   resolution: "ajv@npm:8.20.0"
   dependencies:
@@ -10479,24 +10467,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "picocolors@npm:1.0.0"
-  checksum: 10c0/20a5b249e331c14479d94ec6817a182fd7a5680debae82705747b2db7ec50009a5f6648d0621c561b0572703f84dbef0858abcbd5856d3c5511426afcb1961f7
-  languageName: node
-  linkType: hard
-
-"picocolors@npm:^1.1.1":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
   languageName: node
   linkType: hard
 
-"picomatch@npm:^2.0.4, picomatch@npm:^2.2.1, picomatch@npm:^2.2.2, picomatch@npm:^2.2.3, picomatch@npm:^2.3.1":
-  version: 2.3.1
-  resolution: "picomatch@npm:2.3.1"
-  checksum: 10c0/26c02b8d06f03206fc2ab8d16f19960f2ff9e81a658f831ecb656d8f17d9edc799e8364b1f4a7873e89d9702dff96204be0fa26fe4181f6843f040f819dac4be
+"picomatch@npm:2.3.2":
+  version: 2.3.2
+  resolution: "picomatch@npm:2.3.2"
+  checksum: 10c0/a554d1709e59be97d1acb9eaedbbc700a5c03dbd4579807baed95100b00420bc729335440ef15004ae2378984e2487a7c1cebd743cfdb72b6fa9ab69223c0d61
   languageName: node
   linkType: hard
 
@@ -11774,7 +11755,7 @@ __metadata:
 
 "react-scripts@patch:react-scripts@npm%3A5.0.1#~/.yarn/patches/react-scripts-npm-5.0.1-d06bd2d5ad.patch":
   version: 5.0.1
-  resolution: "react-scripts@patch:react-scripts@npm%3A5.0.1#~/.yarn/patches/react-scripts-npm-5.0.1-d06bd2d5ad.patch::version=5.0.1&hash=af1426"
+  resolution: "react-scripts@patch:react-scripts@npm%3A5.0.1#~/.yarn/patches/react-scripts-npm-5.0.1-d06bd2d5ad.patch::version=5.0.1&hash=756728"
   dependencies:
     "@babel/core": "npm:^7.16.0"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.3"
@@ -11835,7 +11816,7 @@ __metadata:
       optional: true
   bin:
     react-scripts: bin/react-scripts.js
-  checksum: 10c0/dab4a38956136e1666623cf9e11c099f98a5cb1dea4347585787eefab97a775d36f0acf05e34495c69d30c97ce74d67d82afeba81a33c780523e0e62610fc57a
+  checksum: 10c0/0dfb736870e9c02a0b9b97687a233bd192b8a78d8f021afe73cdf91c12c81af77fd18acef80504ac030c193f6744bc159f5acf914089d0f68b39e76a097ca6f7
   languageName: node
   linkType: hard
 
