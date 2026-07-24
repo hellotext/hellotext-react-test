@@ -2,9 +2,11 @@ diff --git a/config/webpackDevServer.config.js b/config/webpackDevServer.config.
 index 522a81b9b2b2723822513390a9d7e0fc38f75066..a5c37c7b549e635c46b8892898e4c69e53dd9b89 100644
 --- a/config/webpackDevServer.config.js
 +++ b/config/webpackDevServer.config.js
-@@ -24,0 +25 @@ module.exports = function (proxy, allowedHost) {
+@@ -24,2 +24,3 @@ const sockPort = process.env.WDS_SOCKET_PORT;
+ module.exports = function (proxy, allowedHost) {
 +  const httpsConfig = getHttpsConfig();
-@@ -102 +103,6 @@ module.exports = function (proxy, allowedHost) {
+   const disableFirewall =
+@@ -102,2 +103,7 @@ module.exports = function (proxy, allowedHost) {
 -    https: getHttpsConfig(),
 +    server: httpsConfig
 +      ? {
@@ -12,15 +14,22 @@ index 522a81b9b2b2723822513390a9d7e0fc38f75066..a5c37c7b549e635c46b8892898e4c69e
 +          options: httpsConfig === true ? {} : httpsConfig,
 +        }
 +      : 'http',
-@@ -110 +115,0 @@ module.exports = function (proxy, allowedHost) {
+     host,
+@@ -109,5 +115,4 @@ module.exports = function (proxy, allowedHost) {
+     },
 -    // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
-@@ -112 +117 @@ module.exports = function (proxy, allowedHost) {
+     proxy,
 -    onBeforeSetupMiddleware(devServer) {
 +    setupMiddlewares(middlewares, devServer) {
-@@ -122,2 +127 @@ module.exports = function (proxy, allowedHost) {
+       // Keep `evalSourceMapMiddleware`
+@@ -121,4 +126,3 @@ module.exports = function (proxy, allowedHost) {
+       }
 -    },
 -    onAfterSetupMiddleware(devServer) {
 +
-@@ -132,0 +137,2 @@ module.exports = function (proxy, allowedHost) {
+       // Redirect to `PUBLIC_URL` or `homepage` from `package.json` if url not match
+@@ -132,2 +136,4 @@ module.exports = function (proxy, allowedHost) {
+       devServer.app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
 +
 +      return middlewares;
+     },
