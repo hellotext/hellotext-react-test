@@ -14,9 +14,6 @@ jest.mock('@hellotext/hellotext', () => ({
   },
 }));
 
-// Mock the SDK stylesheet import
-jest.mock('@hellotext/hellotext/styles/index.css', () => {});
-
 beforeEach(() => {
   localStorage.clear();
   jest.clearAllMocks();
@@ -57,7 +54,9 @@ describe('Setup Screen', () => {
     fireEvent.click(screen.getByTestId('initialize-btn'));
 
     expect(localStorage.getItem('ht_business_id')).toBe('TestBiz123');
-    expect(Hellotext.initialize).toHaveBeenCalledWith('TestBiz123', {});
+    expect(Hellotext.initialize).toHaveBeenCalledWith('TestBiz123', expect.objectContaining({
+      push: { serviceWorkerUrl: '/hellotext-sw.js' },
+    }));
   });
 });
 
@@ -82,6 +81,7 @@ describe('Dashboard', () => {
     expect(screen.getByTestId('tab-tracking')).toBeInTheDocument();
     expect(screen.getByTestId('tab-forms')).toBeInTheDocument();
     expect(screen.getByTestId('tab-webchat')).toBeInTheDocument();
+    expect(screen.getByTestId('tab-smart-alert')).toBeInTheDocument();
   });
 
   test('displays the Business ID in the dashboard header', () => {
@@ -106,5 +106,12 @@ describe('Dashboard', () => {
     // Click Forms tab
     fireEvent.click(screen.getByTestId('tab-forms'));
     expect(screen.getByLabelText(/form id/i)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByTestId('tab-smart-alert'));
+    expect(screen.getByRole('heading', { name: 'Smart Alert' })).toBeInTheDocument();
+    expect(screen.getByTestId('alert-homepage')).toBeInTheDocument();
+    expect(screen.getByTestId('alert-product_collection')).toBeInTheDocument();
+    expect(screen.getByTestId('alert-product_details')).toBeInTheDocument();
+    expect(screen.getByTestId('alert-hide')).toBeInTheDocument();
   });
 });

@@ -5,6 +5,7 @@ import UtmPanel from './UtmPanel';
 import TrackingPanel from './TrackingPanel';
 import FormsPanel from './FormsPanel';
 import WebchatPanel from './WebchatPanel';
+import SmartAlertPanel from './SmartAlertPanel';
 import EventLog from './EventLog';
 import { useI18n } from '../i18n';
 
@@ -26,6 +27,7 @@ export default function Dashboard({
     { id: "tracking", label: t.dashboard.tabs.tracking },
     { id: "forms", label: t.dashboard.tabs.forms },
     { id: "webchat", label: t.dashboard.tabs.webchat },
+    { id: "smart-alert", label: t.dashboard.tabs.smartAlert },
   ];
 
   const renderPanel = () => {
@@ -40,6 +42,8 @@ export default function Dashboard({
         return <FormsPanel addLog={addLog} />;
       case 'webchat':
         return <WebchatPanel addLog={addLog} webchatId={webchatId} />;
+      case 'smart-alert':
+        return <SmartAlertPanel addLog={addLog} />;
       default:
         return <SessionPanel addLog={addLog} />;
     }

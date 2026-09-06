@@ -36,6 +36,7 @@ const translations = {
         tracking: 'Tracking',
         forms: 'Forms',
         webchat: 'Webchat',
+        smartAlert: 'Smart Alert',
       },
     },
 
@@ -108,6 +109,27 @@ const translations = {
       configuration: 'Configuration',
     },
 
+    // --- Smart Alert Panel ---
+    smartAlert: {
+      title: 'Smart Alert',
+      description: 'Show the configured alert for each section and watch its interactions in the Event Log.',
+      sections: 'Sections',
+      sectionLabels: {
+        homepage: 'Homepage',
+        product_collection: 'Product collection',
+        product_details: 'Product details',
+      },
+      showing: 'Showing…',
+      hide: 'Hide alert',
+      status: 'How it works',
+      statusDescription: 'The alert appears at the top center of the page using your Smart Alert appearance and section content. These buttons bypass the dismissal cooldown for repeated testing. Disabled sections, existing push subscriptions, and denied notification permission still prevent display.',
+      unavailable: 'Smart Alert is not available yet. Wait for SDK initialization, enable the Smart Alert playbook, and use a browser that supports Push.',
+      notShown: 'The alert was not shown. Check that this section is enabled, its stylesheet loaded, notifications are not blocked, and this browser is not already subscribed.',
+      monitoredEvents: 'Monitored Events',
+      acceptedHint: 'alert:accepted records the primary button click, not a confirmed push subscription.',
+      usage: 'SDK calls',
+    },
+
     // --- Event Log ---
     eventLog: {
       title: 'Event Log',
@@ -144,6 +166,7 @@ const translations = {
         tracking: 'Seguimiento',
         forms: 'Formularios',
         webchat: 'Webchat',
+        smartAlert: 'Smart Alert',
       },
     },
 
@@ -214,6 +237,27 @@ const translations = {
       statusDescription: 'Si el webchat está configurado para tu negocio, el widget debería aparecer en la esquina inferior derecha de esta página. Interactúa con él y observa los eventos en el Registro de Eventos.',
       monitoredEvents: 'Eventos Monitoreados',
       configuration: 'Configuración',
+    },
+
+    // --- Panel de Smart Alert ---
+    smartAlert: {
+      title: 'Smart Alert',
+      description: 'Muestra la alerta configurada para cada sección y observa sus interacciones en el Registro de Eventos.',
+      sections: 'Secciones',
+      sectionLabels: {
+        homepage: 'Página de inicio',
+        product_collection: 'Colección de productos',
+        product_details: 'Detalles del producto',
+      },
+      showing: 'Mostrando…',
+      hide: 'Ocultar alerta',
+      status: 'Cómo funciona',
+      statusDescription: 'La alerta aparece en la parte superior central de la página con la apariencia y el contenido de cada sección de Smart Alert. Estos botones omiten el período de espera tras un descarte para repetir las pruebas. Las secciones desactivadas, las suscripciones push existentes y los permisos de notificación denegados siguen impidiendo que se muestre.',
+      unavailable: 'Smart Alert aún no está disponible. Espera a que se inicialice el SDK, activa el playbook Smart Alert y usa un navegador compatible con Push.',
+      notShown: 'La alerta no se mostró. Comprueba que esta sección esté activada, que su hoja de estilos se haya cargado, que las notificaciones no estén bloqueadas y que este navegador no esté suscrito.',
+      monitoredEvents: 'Eventos Monitoreados',
+      acceptedHint: 'alert:accepted registra el clic en el botón principal, no una suscripción push confirmada.',
+      usage: 'Llamadas al SDK',
     },
 
     // --- Registro de Eventos ---
