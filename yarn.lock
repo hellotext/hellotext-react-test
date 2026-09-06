@@ -2024,15 +2024,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hellotext/hellotext@npm:^2.4.0":
-  version: 2.4.5
-  resolution: "@hellotext/hellotext@npm:2.4.5"
+"@hellotext/hellotext@npm:^2.5.9":
+  version: 2.5.9
+  resolution: "@hellotext/hellotext@npm:2.5.9"
   dependencies:
     "@emoji-mart/data": "npm:^1.2.1"
     "@floating-ui/dom": "npm:^1.7.3"
     "@hotwired/stimulus": "npm:^3.0.0"
+    dompurify: "npm:^3.4.14"
     emoji-mart: "npm:^5.6.0"
-  checksum: 10c0/812aa2cd7c11294f807f27236ef3e3a3f1b16a6a15eb077d999330cd7babc7f9730496fc177bb098309765ccdd97e93ba6aa9051a057e98815658c5a17eb4495
+  checksum: 10c0/9545c91889d7ec662d99cc6411a3afef30f3bd1dd2d8b96e65f6cda6a6320addb7f686df7ff92ce24b76ff45bd34cd6b220c8d5cf8a54b0df5814cb44758f9fb
   languageName: node
   linkType: hard
 
@@ -3606,6 +3607,13 @@ __metadata:
   version: 2.0.2
   resolution: "@types/trusted-types@npm:2.0.2"
   checksum: 10c0/8c5253d7a297ba375b1dff7704013fb8d31c08c681d257db9e7e0624309cbb4a1e0c916bdd5a8c378992391126af0adb731720ba7642244a2f2c1ff42aba5bcf
+  languageName: node
+  linkType: hard
+
+"@types/trusted-types@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 10c0/4c4855f10de7c6c135e0d32ce462419d8abbbc33713b31d294596c0cc34ae1fa6112a2f9da729c8f7a20707782b0d69da3b1f8df6645b0366d08825ca1522e0c
   languageName: node
   linkType: hard
 
@@ -5953,6 +5961,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:^3.4.14":
+  version: 3.4.14
+  resolution: "dompurify@npm:3.4.14"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.7"
+  dependenciesMeta:
+    "@types/trusted-types":
+      optional: true
+  checksum: 10c0/feca07ece3805d1d4e33e847c11196888dcdc97b2afe0bb8a2fd11de4e62bfdc434c2403ee3fb3c7771e903325041d062febec6c5518796391fdc0419a90a873
+  languageName: node
+  linkType: hard
+
 "domutils@npm:^1.7.0":
   version: 1.7.0
   resolution: "domutils@npm:1.7.0"
@@ -7562,7 +7582,7 @@ __metadata:
   resolution: "hellotext-playground@workspace:."
   dependencies:
     "@babel/plugin-proposal-private-property-in-object": "npm:^7.21.11"
-    "@hellotext/hellotext": "npm:^2.4.0"
+    "@hellotext/hellotext": "npm:^2.5.9"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.4.0"
     "@testing-library/user-event": "npm:^13.5.0"

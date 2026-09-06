@@ -23,7 +23,11 @@ function App() {
   }, []);
 
   const handleInitialize = useCallback((bizId, chatId) => {
-    const config = {};
+    const config = {
+      push: {
+        serviceWorkerUrl: '/hellotext-sw.js',
+      },
+    };
     if (chatId) {
       config.webchat = { id: chatId };
     }
