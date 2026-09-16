@@ -2024,16 +2024,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hellotext/hellotext@npm:^2.5.9":
-  version: 2.5.9
-  resolution: "@hellotext/hellotext@npm:2.5.9"
+"@hellotext/hellotext@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@hellotext/hellotext@npm:2.6.0"
   dependencies:
     "@emoji-mart/data": "npm:^1.2.1"
     "@floating-ui/dom": "npm:^1.7.3"
     "@hotwired/stimulus": "npm:^3.0.0"
-    dompurify: "npm:^3.4.14"
+    dompurify: "npm:^3.4.15"
     emoji-mart: "npm:^5.6.0"
-  checksum: 10c0/9545c91889d7ec662d99cc6411a3afef30f3bd1dd2d8b96e65f6cda6a6320addb7f686df7ff92ce24b76ff45bd34cd6b220c8d5cf8a54b0df5814cb44758f9fb
+  checksum: 10c0/99944fddeb842a98992b4b7c7c86b3744465378c63eab4578a8f36e706ac55a3cbb98c15caaf2c12161891ba6d7029d3f6d1290d0a27176b5afabea8a607cba3
   languageName: node
   linkType: hard
 
@@ -5961,15 +5961,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.4.14":
-  version: 3.4.14
-  resolution: "dompurify@npm:3.4.14"
+"dompurify@npm:^3.4.15":
+  version: 3.4.15
+  resolution: "dompurify@npm:3.4.15"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10c0/feca07ece3805d1d4e33e847c11196888dcdc97b2afe0bb8a2fd11de4e62bfdc434c2403ee3fb3c7771e903325041d062febec6c5518796391fdc0419a90a873
+  checksum: 10c0/406b5f0f9c9dcbc80016367d33e73585b6a6f440815228d7e9cbe8abe71058183b1f4cb4207b79b8473637de4a106fc055eb6da271ef9db353d29679b891ecbc
   languageName: node
   linkType: hard
 
@@ -7582,7 +7582,7 @@ __metadata:
   resolution: "hellotext-playground@workspace:."
   dependencies:
     "@babel/plugin-proposal-private-property-in-object": "npm:^7.21.11"
-    "@hellotext/hellotext": "npm:^2.5.9"
+    "@hellotext/hellotext": "npm:^2.6.0"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.4.0"
     "@testing-library/user-event": "npm:^13.5.0"
